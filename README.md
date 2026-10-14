@@ -2,11 +2,14 @@
 
 Static site. No build step.
 
-## Deploy to Cloudflare Pages
+## Deploy to Cloudflare (Workers, static assets)
 1. Commit the contents of this folder to the root of `garyjlo/ordoautomata-site` (main).
-2. Cloudflare dashboard → Workers & Pages → Create → Pages → Connect to Git → pick the repo.
-3. Framework preset: **None**. Build command: *(leave empty)*. Build output directory: `/`.
-4. Deploy, then Custom domains → add your domain (Cloudflare adds the DNS record if the domain is on Cloudflare).
+2. Cloudflare dashboard → Workers & Pages → Create → Worker → Connect to Git → pick the repo.
+3. Build command: *(empty)*. Deploy command: `npx wrangler deploy`. Root directory: `/`.
+4. `wrangler.toml` tells wrangler to serve this folder as static assets; no code bundle.
+5. Settings → Domains & Routes → add the custom domain.
+
+If the project was created as **Pages** instead: framework preset None, no build command, output directory `/`, and `wrangler.toml` is ignored.
 
 ## Files
 - `index.html` — the page
@@ -14,6 +17,7 @@ Static site. No build step.
 - `image-slot.js` — partner portrait slots (replace with <img> once photos exist)
 - `assets/` — seal and trace artwork
 - `_headers` — Cloudflare cache and security headers
+- `wrangler.toml` — Worker config: serves the folder as static assets
 
 ## Before going public
 - The contact form only shows the stamp animation; it does not send anywhere yet. Wire it to a form service or a Cloudflare Pages Function.

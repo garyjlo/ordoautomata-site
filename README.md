@@ -23,3 +23,4 @@ If the project was created as **Pages** instead: framework preset None, no build
 - The contact form only shows the stamp animation; it does not send anywhere yet. Wire it to a form service or a Cloudflare Pages Function.
 - Replace the SAMPLE results, the pull quote, partner names and photos, and the email address.
 - The seal is a raster cut from the concept diagram; swap in a vector version when available.
+ 

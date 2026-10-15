@@ -13,6 +13,7 @@ If the project was created as **Pages** instead: framework preset None, no build
 
 ## Files
 - `index.html` — the page
+- `404.html` — not-found page (served automatically via `not_found_handling` in wrangler.toml)
 - `support.js` — runtime the page needs
 - `image-slot.js` — partner portrait slots (replace with <img> once photos exist)
 - `assets/` — seal and trace artwork
